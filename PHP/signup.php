@@ -1,26 +1,36 @@
 <?php
     require("connection_to_login&signupdb.php");
 
-    $Fname = $_POST['FName'];
-    $Lname = $_POST['LName'];
-    $DOB = $_POST['DOB'];
-    $Email = $_POST['Email'];
-    $Username = $_POST['Username'];
-    $Password = $_POST['Password'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        $Fname = $_POST['FName'];
+        $Lname = $_POST['LName'];
+        $DOB = $_POST['DOB'];
+        $Email = $_POST['Email'];
+        $Username = $_POST['Username'];
+        $Password = $_POST['Password'];   
+    }
+    
 
     $recoveryCode = generateRecoveryCode();
 
-    $sql = "INSERT INTO signup (Recovery Code, First Name, Last Name, Date Of Birth, Email, Username, Password)
-            VALUES ('$recoveryCode', '$Fname', '$Lname', $DOB', '$Email', '$Username', '$Password')";
+    //If the column has a space in it `Column Name` that `` should be used instead of others.
+    //Or else like maria server version will come.
+    /* $sql = "INSERT INTO signup (Recovery Code, First Name, Last Name, Date Of Birth, Email, Username, Password)
+            VALUES ('$recoveryCode', '$Fname', '$Lname', $DOB', '$Email', '$Username', '$Password')"; */
+
+            $sql = "INSERT INTO signup (`Recovery Code`, `First Name`, `Last Name`, `Date Of Birth`, `Email`, `Username`, `Password`)
+                    VALUES ('$recoveryCode', '$Fname', '$Lname', '$DOB', '$Email', '$Username', '$Password')";
+
 
     if ($conn->query($sql) === TRUE) {
         echo "<script>";
         echo "alert('Sign Up successful. Please Login.');";
         echo "</script>";
     } else {
-        echo "<script>";
+        /* echo "<script>";
         echo "alert('Error while signing up.');";
-        echo "</script>";
+        echo "</script>"; */
+        echo "Error: " . "<br>" . $conn->error;
     }
 
     function generateRecoveryCode() {
@@ -31,4 +41,5 @@
         return $key;
     }
 
+    $conn->close();
     ?>

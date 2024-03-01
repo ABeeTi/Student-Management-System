@@ -27,15 +27,15 @@
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["ID"] . "</td>";
-                echo "<td>" . $row["First_Name"] . "</td>"; // Corrected column name
-                echo "<td>" . $row["Middle_Name"] . "</td>"; // Corrected column name
-                echo "<td>" . $row["Last_Name"] . "</td>"; // Corrected column name
+                echo "<td>" . $row["First Name"] . "</td>"; // Corrected column name
+                echo "<td>" . $row["Middle Name"] . "</td>"; // Corrected column name
+                echo "<td>" . $row["Last Name"] . "</td>"; // Corrected column name
                 echo "<td>" . $row["Section"] . "</td>";
-                echo "<td>" . $row["Phone_Number"] . "</td>"; // Corrected column name
+                echo "<td>" . $row["Phone Number"] . "</td>"; // Corrected column name
                 echo "<td>" . $row["Email"] . "</td>";
-                echo "<td>" . $row["Date_Of_Birth"] . "</td>"; // Corrected column name
-                echo "<td>" . $row["Father_Name"] . "</td>"; // Corrected column name
-                echo "<td>" . $row["Mother_Name"] . "</td>"; // Corrected column name
+                echo "<td>" . $row["Date Of Birth"] . "</td>"; // Corrected column name
+                echo "<td>" . $row["Father Name"] . "</td>"; // Corrected column name
+                echo "<td>" . $row["Mother Name"] . "</td>"; // Corrected column name
                 echo "<td>" . $row["Address"] . "</td>";
                 echo "</tr>";
             }

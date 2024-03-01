@@ -7,7 +7,11 @@
     $conn = new mysqli($servername, $username, $password, $db);
 
     if (!$conn){
-        die("Connection to the database failed: " . mysqli_connect_error());
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    if (!$conn->select_db($db)) {
+        die("Database selection failed: " . $conn->error);
     }
 
     ?>
