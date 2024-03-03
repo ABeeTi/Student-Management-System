@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #333; /* Background color */
+  background-color:cornflowerblue; /* Background color */
   overflow: hidden; /* Clear floats */
   display: flex; /* Use flexbox */
   justify-content: space-between; /* Evenly distribute items along the main axis */
