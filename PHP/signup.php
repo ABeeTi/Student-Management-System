@@ -17,6 +17,25 @@
                 $Username = $_POST['Username'];
                 $Password = $_POST['Password'];
 
+                $chk = "SELECT * FROM registration WHERE Username = '$Username'";
+                $ckk2 = "SELECT * FROM registration WHERE Password = '$Password' ";
+                $chkA = $conn->query($chk);
+                $chkB = $conn->query($chk2);
+
+                if ($chkA->num_rows > 0) {
+                    echo '<script>';
+                    echo 'alert("The Username is already taken!")';
+                    echo "window.location.href = '../HTML/login-signup.html';";
+                    echo '</script>';
+                }
+
+                if ($chkB->num_rows > 0) {
+                    echo '<script>';
+                    echo 'alert("The Email is already in use!")';
+                    echo "window.location.href = '../HTML/login-signup.html';";
+                    echo '</script>';
+                }
+
                 function generateRecoveryCode() {
                     $key = uniqid(); // Generate a unique identifier
                     $key = substr_replace($key, "-", 4, 0); // Insert hyphen at position 4
@@ -27,7 +46,7 @@
             
                 $recoveryCode = generateRecoveryCode();
             
-                    $sql = "INSERT INTO signup (`Recovery Code`, `First Name`, `Last Name`, `Date Of Birth`, `Email`, `Username`, `Password`)
+                    $sql = "INSERT INTO registration (`Recovery Code`, `First Name`, `Last Name`, `Date Of Birth`, `Email`, `Username`, `Password`)
                             VALUES ('$recoveryCode', '$Fname', '$Lname', '$DOB', '$Email', '$Username', '$Password')";
             
             
