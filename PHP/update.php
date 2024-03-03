@@ -2,7 +2,7 @@
 include 'connection_to_login&signupdb.php';
 
 $id = $_GET['id'];
-$select = "SELECT * FROM students WHERE id='$id'";
+$select = "SELECT * FROM students WHERE ID='$id'";
 $data = mysqli_query($conn, $select);
 
 if ($data === false) {

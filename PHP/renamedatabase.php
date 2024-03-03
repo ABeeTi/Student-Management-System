@@ -1,12 +1,8 @@
 <?php
-
+    require("connection.php");
+    $conn->close();
     $old_db_name = $_GET['old_db_name'];
     $new_db_name = $_GET['new_db_name'];
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-
 
     $conn = new mysqli($servername, $username, $password, $old_db_name);
 

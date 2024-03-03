@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $Login_Username = $_POST['Login_Username'];
         $Login_Password = $_POST['Login_Password'];
 
-        $sql = "SELECT * FROM signup WHERE Username = '$Login_Username' AND Password = '$Login_Password' ";
+        $sql = "SELECT * FROM registration WHERE Username = '$Login_Username' AND Password = '$Login_Password' ";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

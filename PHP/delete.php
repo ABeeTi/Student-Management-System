@@ -1,6 +1,6 @@
 <?php include 'connection_to_login&signupdb.php';
 $id=$_GET['id'];
-$querry="DELETE FROM students WHERE id='$id'";
+$querry="DELETE FROM students WHERE ID='$id'";
 $data=mysqli_query($con,$query);
 if ($data){
     ?>
