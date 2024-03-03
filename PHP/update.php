@@ -14,6 +14,11 @@ $row = mysqli_fetch_array($data);
 ?>
 
 <html>
+    <head>
+        <title>Update</title>
+        <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../CSS/Style.css">
+    </head>
     <body>
     <div>
         <form action="" method="POST">

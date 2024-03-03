@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS/dashboard.css">
     <title>Data</title>
     <link rel="stylesheet" href="../CSS/nav_design.css">
+    <link rel="shortcut icon" href="../Image/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <nav class="navbar">
