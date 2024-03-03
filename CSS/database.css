@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: red;
+}
+
+h2 {
+    color: red;
+    margin-top: 20px;
+}
+
+p {
+    color: black;
+}
+
+input[type="radio"] {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+label {
+    color: black;
+}
+
+input[type="text"],
+input[type="submit"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #cc0000;
+}
+
+/* Show div elements when corresponding radio buttons are clicked */
+#Create_db,
+#Rename_db,
+#Delete_db {
+    display: none;
+}
+
+/* Style for displaying corresponding form */
+input[value="Create"]:checked ~ #Create_db,
+input[value="Rename"]:checked ~ #Rename_db,
+input[value="Delete"]:checked ~ #Delete_db {
+    display: block;
+}
+
+button {
+    color: #fff;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3
+}
+button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
+a.back {
+    text-decoration: none;
+    color: ghostwhite;
+}

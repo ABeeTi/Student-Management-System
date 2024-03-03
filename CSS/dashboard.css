@@ -1,0 +1,88 @@
+/* dashboard.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text color */
+    margin: 0;
+    padding: 0;
+    /* background-image: url(../Image/Tokyo.jpg); */
+
+}
+
+h1{
+    color: ghostwhite;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Light gray border bottom */
+}
+
+th {
+    background-color: #ff4d4d; /* Red background for table header */
+    color: #fff; /* White text color */
+}
+tr{
+    background-color: grey;
+}
+
+tr:hover {
+    background-color: #f2f2f2; /* Light gray background on hover */
+}
+
+/* Button styles */
+/* Add Student button styles */
+a.add-student-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background for button */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+a.add-student-button:hover {
+    background-color: #45a049; /* Darker green background on hover */
+}
+
+/* CSS to remove underline from links */
+/* CSS to style Update and Delete links */
+.action-buttons {
+    display: inline-block; /* Keep them on the same line */
+}
+
+a.update-link,
+a.delete-link {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a.update-link:hover,
+a.delete-link:hover {
+    background-color: #0056b3;
+}
+

@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #333; /* Background color */
+  overflow: hidden; /* Clear floats */
+  display: flex; /* Use flexbox */
+  justify-content: space-between; /* Evenly distribute items along the main axis */
+}
+
+.nav-link {
+  display: block; /* Display links as block elements */
+  color: white; /* Text color */
+  text-align: center; /* Center-align text */
+  padding: 14px 20px; /* Padding */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.nav-link:hover {
+  background-color: #111; /* Darker background color on hover */
+}
+
+.hidden {
+  display: none; /* Hide elements with the hidden class */
+}
+
+body{
+  background-image: url(../Image/BlackRed.jpg);
+  background-size: auto;
+}

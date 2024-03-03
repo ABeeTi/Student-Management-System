@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Students</title>
+    <link rel="stylesheet" href="../CSS/nav_design.css">
+    <link rel="stylesheet" href="../CSS/addstudent.css">
 </head>
 <body>
+  <nav class="navbar">
+    <a href="../HTML/index.html" class="nav-link">Home</a>
+    <a href="../HTML/pricing.html" class="nav-link">Pricing</a>
+    <a href="../HTML/aboutus.html" class="nav-link">About Us</a>
+    <a href="../HTML/contactus.html" class="nav-link">Contact Us</a>
+    <a href="../HTML/login-signup.html" id="sign-in" class="nav-link">Sign In</a>
+    <a href="../HTML/login-signup.html" id="sign-up" class="nav-link">Sign Up</a>
+    <a href="../PHP/dashboard.php" id="dashboard" class="nav-link hidden">Dashboard</a>
+    <a href="../HTML/index.html" onclick="toggleVisibility(0)" id="sign-out" class="nav-link hidden">Sign Out</a>
+  </nav>
+
+  <script src="../JavaScript/track.js"></script>
     <h1>Fill the Details</h1>
     <form method="post" action="../PHP/addStudent.php">
         <label>Enter ID: </label>
@@ -31,6 +45,7 @@
         <label>Enter Address: </label>
         <input type="text" name="Address"><br>
         <input type="submit" value="Add Student">
+        <button><a href="../PHP/dashboard.php">Back</a></button>
     </form>
 </body>
 </html>

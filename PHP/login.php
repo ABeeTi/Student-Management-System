@@ -1,40 +1,33 @@
 <?php
-    require("connection_to_login&signupdb.php");
+require("connection_to_login&signupdb.php");
 
-    $Login_Username = $_POST['Login_Username'];
-    $Login_Password = $_POST['Login_Password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['Login_Username']) && !empty($_POST['Login_Username']) &&
+        isset($_POST['Login_Password']) && !empty($_POST['Login_Password'])) {
+        
+        $Login_Username = $_POST['Login_Username'];
+        $Login_Password = $_POST['Login_Password'];
 
-    $sql = "SELECT * FROM signup WHERE Username = '$Login_Username' AND Password = '$Login_Password' ";
+        $sql = "SELECT * FROM signup WHERE Username = '$Login_Username' AND Password = '$Login_Password' ";
+        $result = $conn->query($sql);
 
-    // Execute the SQL query
-$result = $conn->query($sql);
-
-// Check if the query was successful
-if ($result !== false) {
-    // Now you can safely access properties like num_rows
-    if ($result->num_rows > 0) {
-        // Process the result
+        if ($result->num_rows > 0) {
+            echo "<script>";
+            echo "alert('You have successfully Logged in. Sending you to Dashboard.');";
+            echo "window.location.href = 'dashboard.php';";
+            echo "</script>";
+        } else {
+            echo "<script>";
+            echo "alert('Username or Password Invalid');";
+            echo "window.location.href = '../HTML/login-signup.html';";
+            echo "</script>";
+        }
+        $conn->close();
     } else {
-        // No rows found
+        echo "<script>";
+        echo "alert('Fill all the fields.');";
+        echo "window.location.href = '../HTML/login-signup.html';";
+        echo "</script>";
     }
-} else {
-    // Query failed, handle the error
-    echo "Error: " . $conn->error;
 }
-
-
-    if($result-> num_rows > 0){
-        echo "<script>";
-        echo "alert('You have successfulled Loggedin. Sending you to Dashboard.');";
-        echo "</script>";
-        header("Location: dashboard.php");
-        exit();
-    } else {
-        echo "<script>";
-        echo "alert('Username or Password Invalid');";
-        echo "</script>";
-    }
-
-    $conn->close();
-
-    ?>
+?>

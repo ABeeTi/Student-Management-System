@@ -5,8 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../JavaScript/dropdown.js"></script>
     <title>Database</title>
+    <link rel="stylesheet" href="../CSS/nav_design.css">
+    <link rel="stylesheet" href="../CSS/database.css">
 </head>
 <body>
+  <nav class="navbar">
+    <a href="../HTML/index.html" class="nav-link">Home</a>
+    <a href="../HTML/pricing.html" class="nav-link">Pricing</a>
+    <a href="../HTML/aboutus.html" class="nav-link">About Us</a>
+    <a href="../HTML/contactus.html" class="nav-link">Contact Us</a>
+    <a href="../HTML/login-signup.html" id="sign-in" class="nav-link">Sign In</a>
+    <a href="../HTML/login-signup.html" id="sign-up" class="nav-link">Sign Up</a>
+    <a href="../PHP/dashboard.php" id="dashboard" class="nav-link hidden">Dashboard</a>
+    <a href="../HTML/index.html" onclick="toggleVisibility(0)" id="sign-out" class="nav-link hidden">Sign Out</a>
+  </nav>
+
+  <script src="../JavaScript/track.js"></script>
     <h1>
         Edit Your Database
     </h1>
@@ -41,9 +55,9 @@
                 <input type="submit" value="Delete Database">
             </form>
         </div>
-    
-
-        
-        
+        <br>
+        <br>
+        <br>
+        <button><a class="back" href="../PHP/dashboard.php">Back</a></button>
 </body>
 </html>

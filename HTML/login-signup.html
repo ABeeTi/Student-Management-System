@@ -6,8 +6,21 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/login-signup.css">
 	<script src="../JavaScript/submit_Form.js"></script>
 	<title>Welcome</title>
+	<link rel="stylesheet" href="../CSS/nav_design.css">
 </head>
 <body>
+  <nav class="navbar">
+    <a href="../HTML/index.html" class="nav-link">Home</a>
+    <a href="../HTML/pricing.html" class="nav-link">Pricing</a>
+    <a href="../HTML/aboutus.html" class="nav-link">About Us</a>
+    <a href="../HTML/contactus.html" class="nav-link">Contact Us</a>
+    <a href="../HTML/login-signup.html" id="sign-in" class="nav-link">Sign In</a>
+    <a href="../HTML/login-signup.html" id="sign-up" class="nav-link">Sign Up</a>
+    <a href="../PHP/dashboard.php" id="dashboard" class="nav-link hidden">Dashboard</a>
+	<a href="../HTML/index.html" onclick="toggleVisibility(0)" id="sign-out" class="nav-link hidden">Sign Out</a>
+  </nav>
+
+  <script src="../JavaScript/track.js"></script>
 	
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
@@ -15,13 +28,13 @@
 			<h1>Create Account</h1>
 
 			<span>or use your email for registration</span>
-			<input type="text" name="FName" placeholder="First Name" />
-			<input type="text" name="LName" placeholder="Last Name" />
-			<input type="date" name="DOB" placeholder="Date of birth" />
-			<input type="email" name="Email" placeholder="Email" />
-			<input type="text" name="Username" placeholder="Username" />
-			<input type="password" name="Password" placeholder="Password" />
-			<button onclick="signupform_submit()">Sign Up</button>
+			<input type="text" id="FName" name="FName" placeholder="First Name" />
+			<input type="text" id="LName" name="LName" placeholder="Last Name" />
+			<input type="date" id="DOB" name="DOB" placeholder="Date of birth" />
+			<input type="email" id="Email" name="Email" placeholder="Email" />
+			<input type="text" id="Username" name="Username" placeholder="Username" />
+			<input type="password" id="Password" name="Password" placeholder="Password" />
+			<button>Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">

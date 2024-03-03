@@ -1,0 +1,94 @@
+/* General styling */
+body {
+    font-family: sans-serif;
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Add some padding */
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #e54a4a; /* Red heading */
+  }
+  
+  /* Navigation bar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff; /* White background */
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd; /* Light gray border */
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #333; /* Darker text color */
+    margin-right: 20px;
+    font-weight: bold;
+  }
+  
+  .nav-link:hover {
+    color: #e54a4a; /* Red hover color */
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Form styling */
+  form {
+    width: 600px; /* Adjust width as needed */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #e54a4a; /* Red submit button */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #fff; /* White button */
+    color: #e54a4a; /* Red text color */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button a {
+    text-decoration: none; /* Remove underline from anchor tag */
+    color: inherit;
+  }
+  
+  button:hover {
+    background-color: #f5f5f5; /* Light gray hover color */
+  }
+  
