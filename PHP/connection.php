@@ -1,7 +1,7 @@
 <?php
     $servername = "sql211.infinityfree.com";
-    $username = "if0_36074239";
-    $password = "Database768004";
+    $username = "";
+    $password = "";
 
     $conn = new mysqli($servername, $username, $password);
 
