@@ -9,75 +9,64 @@
                 isset($_POST['Username']) && !empty($_POST['Username']) &&
                 isset($_POST['Password']) && !empty($_POST['Password'])) {
 
-                    $access = $_POST['access_key'];
-                        if($access == 'kingaagneya'){
-                                                        // All required fields are filled, proceed with further validation or data processing
-                            $Fname = $_POST['FName'];
-                            $Lname = $_POST['LName'];
-                            $DOB = $_POST['DOB'];
-                            $Email = $_POST['Email'];
-                            $Username = $_POST['Username'];
-                            $Password = $_POST['Password'];
-                            
+                // All required fields are filled, proceed with further validation or data processing
+                $Fname = $_POST['FName'];
+                $Lname = $_POST['LName'];
+                $DOB = $_POST['DOB'];
+                $Email = $_POST['Email'];
+                $Username = $_POST['Username'];
+                $Password = $_POST['Password'];
 
-                            $chk = "SELECT * FROM registration WHERE Username = '$Username'";
-                            $ckk2 = "SELECT * FROM registration WHERE Password = '$Password' ";
-                            $chkA = $conn->query($chk);
-                            $chkB = $conn->query($chk2);
+                $chk = "SELECT * FROM registration WHERE Username = '$Username'";
+                $ckk2 = "SELECT * FROM registration WHERE Password = '$Password' ";
+                $chkA = $conn->query($chk);
+                $chkB = $conn->query($chk2);
 
-                            if ($chkA->num_rows > 0) {
-                                echo '<script>';
-                                echo 'alert("The Username is already taken!")';
-                                echo "window.location.href = '../HTML/login-signup.html';";
-                                echo '</script>';
-                            }
+                if ($chkA->num_rows > 0) {
+                    echo '<script>';
+                    echo 'alert("The Username is already taken!")';
+                    echo "window.location.href = '../HTML/login-signup.html';";
+                    echo '</script>';
+                }
 
-                            if ($chkB->num_rows > 0) {
-                                echo '<script>';
-                                echo 'alert("The Email is already in use!")';
-                                echo "window.location.href = '../HTML/login-signup.html';";
-                                echo '</script>';
-                            }
+                if ($chkB->num_rows > 0) {
+                    echo '<script>';
+                    echo 'alert("The Email is already in use!")';
+                    echo "window.location.href = '../HTML/login-signup.html';";
+                    echo '</script>';
+                }
 
-                            function generateRecoveryCode() {
-                                $key = uniqid(); // Generate a unique identifier
-                                $key = substr_replace($key, "-", 4, 0); // Insert hyphen at position 4
-                                $key = substr_replace($key, "-", 9, 0); // Insert hyphen at position 9
-                                $key = substr_replace($key, "-", 14, 0); // Insert hyphen at position 14
-                                return $key;
-                            }
-                        
-                            $recoveryCode = generateRecoveryCode();
-                        
-                            $sql = "INSERT INTO registration (`Recovery Code`, `First Name`, `Last Name`, `Date Of Birth`, `Email`, `Username`, `Password`)
-                                    VALUES ('$recoveryCode', '$Fname', '$Lname', '$DOB', '$Email', '$Username', '$Password')";
-                        
-                        
-                            if ($conn->query($sql) === TRUE) {
-                            echo "<script>";
-                            echo "var code = '" . $recoveryCode . "';";
-                            echo "alert('Sign Up successful.\\nYour Recovery Code: ' + code + '\\nPlease note it, It will be used during resetting your password.\\nNow, Please Login.');";
-                            echo "window.location.href = '../HTML/login-signup.html';";
-                            echo "</script>";
-                            } else {
-                            echo "Error: " . "<br>" . $conn->error;
-                            }
-                            $conn->close();
-                            } else {
-                            echo "<script>";
-                            echo "alert('Any empty field result in whole form being reset. \\nPlease check before submiting.');";
-                            echo "window.location.href = '../HTML/login-signup.html';";
-                            echo "</script>";
-                            exit();
-                    }
-                 } else {
-                            echo "<script>";
-                            echo "alert('Wrong Access Code');";
-                            echo "window.location.href = '../HTML/login-signup.html';";
-                            echo "</script>";
-                            exit();
-                        }
-                                    
+                function generateRecoveryCode() {
+                    $key = uniqid(); // Generate a unique identifier
+                    $key = substr_replace($key, "-", 4, 0); // Insert hyphen at position 4
+                    $key = substr_replace($key, "-", 9, 0); // Insert hyphen at position 9
+                    $key = substr_replace($key, "-", 14, 0); // Insert hyphen at position 14
+                    return $key;
+                }
+            
+                $recoveryCode = generateRecoveryCode();
+            
+                    $sql = "INSERT INTO registration (`Recovery Code`, `First Name`, `Last Name`, `Date Of Birth`, `Email`, `Username`, `Password`)
+                            VALUES ('$recoveryCode', '$Fname', '$Lname', '$DOB', '$Email', '$Username', '$Password')";
+            
+            
+                if ($conn->query($sql) === TRUE) {
+                echo "<script>";
+                echo "var code = '" . $recoveryCode . "';";
+                echo "alert('Sign Up successful.\\nYour Recovery Code: ' + code + '\\nPlease note it, It will be used during resetting your password.\\nNow, Please Login.');";
+                echo "window.location.href = '../HTML/login-signup.html';";
+                echo "</script>";
+            } else {
+                echo "Error: " . "<br>" . $conn->error;
+            }
+                $conn->close();
+            } else {
+                echo "<script>";
+                echo "alert('Any empty field result in whole form being reset. \\nPlease check before submiting.');";
+                echo "window.location.href = '../HTML/login-signup.html';";
+                echo "</script>";
+                exit();
+            }
         } else {
             // If the form is not submitted, redirect back to the form page
             header("Location: ../HTML/login-signup.html");
